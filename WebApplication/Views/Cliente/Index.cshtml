@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WebApplication.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Lista de Clientes";
+}
+<div class="text-center">
+    <h1>Lista de Clientes</h1>
+</div>
+<hr />
+<p class="text-center">
+    <button class="btn btn-outline-success" asp-action="Create">Adicionar um novo Cliente</button>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeCompleto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sexo)
+            </th>
+            <th>
+                Usuário
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeCompleto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataNascimento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sexo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User)
+                </td>
+                <td>
+                    <button class="btn btn-success" data-toggle="modal" data-target="exampleModal" data-id="@item.ClienteId"><i class="glyphicon glyphicon-file"></i>Detalhes</button>
+                    <button class="btn btn-danger" data-id="@item.ClienteId">Remover</button>
+                    <button class="btn btn-primary edit" data-id="@item.ClienteId">Editar</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

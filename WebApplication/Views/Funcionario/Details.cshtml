@@ -1,0 +1,42 @@
+﻿@model WebApplication.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Funcionario</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nome Completo:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomeFuncionario)
+        </dd>
+        <dt class = "col-sm-2">
+            Cargo:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CargoFuncionario)
+        </dd>
+        <dt class = "col-sm-2">
+            Salário:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SalarioFuncionario)
+        </dd>
+        <dt class = "col-sm-2">
+            Data de Admissão:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataAdmissao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.FuncionarioId">Editar</a> |
+    <a asp-action="Index">Voltar para a lista</a>
+</div>

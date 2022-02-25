@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Início";
+}
+@*LISTA DE CLIENTES*@
+<div class="row">
+    <div class="col-4">
+        <div class="card border-dark mb-3" style="width: 18rem;">
+            <img class="card-img-top" src="~/img/Produtos.png" alt="Imagem de capa do card" width="100px">
+            <div class="card-body text-center">
+                <h4 class="card-title">Lista de Clientes</h4>
+                <p class="card-text"></p>
+                <div class="card-footer text-center">
+                    <a asp-action="Index" asp-controller="Cliente" class="btn btn-outline-dark">Acessar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    @*LISTA DE FUNCIONÁRIOS*@
+    <div class="col-4">
+        <div class="card border-dark mb-3" style="width: 18rem;">
+            <img class="card-img-top" src="~/img/Produtos.png" alt="Imagem de capa do card">
+            <div class="card-body text-center">
+                <h4 class="card-title">Lista de Funcionários</h4>
+                <p class="card-text"></p>
+                <div class="card-footer text-center">
+                    <a asp-action="Index" asp-controller="Funcionario" class="btn btn-outline-dark">Acessar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    @*LISTA DE PRODUTOS*@
+    <div class="col-4">
+        <div class="card border-dark mb-3" style="width: 18rem;">
+            <img class="card-img-top" src="~/img/Produtos.png" alt="Imagem de capa do card" width="100px">
+            <div class="card-body text-center">
+                <h4 class="card-title">Lista de Produtos</h4>
+                <p class="card-text"></p>
+                <div class="card-footer text-center">
+                    <a asp-action="Index" asp-controller="Produto" class="btn btn-outline-dark">Acessar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebApplication.Models.Funcionario>
+
+@{
+    ViewData["Title"] = "Lista de Funcionários";
+}
+<div class="text-center">
+    <h4>Lista de Funcionários</h4>
+</div>
+<button class="btn btn-outline-success text-center" asp-action="Create">
+    Registrar um novo Funcionário
+</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome Completo
+            </th>
+            <th>
+                Cargo
+            </th>
+            <th>
+                Salário
+            </th>
+            <th>
+                Data de Admissão
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeFuncionario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CargoFuncionario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalarioFuncionario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataAdmissao)
+            </td>
+            <td>
+                <button class="btn btn-info" asp-action="Edit" asp-route-id="@item.FuncionarioId">Editar</button>
+                <button class="btn btn-success"asp-action="Details" asp-route-id="@item.FuncionarioId">Detalhes</button>
+                <button class="btn btn-danger"asp-action="Delete" asp-route-id="@item.FuncionarioId">Delete</button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

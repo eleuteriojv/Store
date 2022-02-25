@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebApplication.Models.Produto>
+
+@{
+    ViewData["Title"] = "Estoque";
+}
+<div class="text-center">
+    <h4>Estoque</h4>
+</div>
+
+<button asp-action="Create" class="btn btn-outline-success"> Adicionar
+</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome do Produto
+            </th>
+            <th>
+                Data de Entrada
+            </th>
+            <th>
+                Data de Saída
+            </th>
+            <th>
+                Preço
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeProduto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataEntrada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataSaida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preco)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ProdutoId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.ProdutoId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProdutoId">Remover</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

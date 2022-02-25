@@ -1,0 +1,38 @@
+﻿@model WebApplication.Models.Produto
+
+@{
+    ViewData["Title"] = "Remover";
+}
+<div class="text-center">
+    <h4>Remover</h4>
+</div>
+<hr />
+<h3>Você tem certeza que deseja remover este produto do estoque?</h3>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            Nome do Produto:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NomeProduto)
+        </dd>
+        <dt class="col-sm-2">
+            Data de Entrada
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataEntrada)
+        </dd>
+        <dt class="col-sm-2">
+            Preço
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ProdutoId" />
+        <input type="submit" value="Remover" class="btn btn-outline-danger" /> |
+        <a asp-action="Index">Voltar para a lista</a>
+    </form>
+</div>

@@ -1,0 +1,45 @@
+﻿@model WebApplication.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Remover Funcionário";
+}
+<div class="text-center">
+    <h4>Remover Funcionário</h4>
+</div>
+
+<h3>Você tem certeza que deseja remover este funcionário?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nome Completo:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomeFuncionario)
+        </dd>
+        <dt class = "col-sm-2">
+            Cargo:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CargoFuncionario)
+        </dd>
+        <dt class = "col-sm-2">
+            Salário:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SalarioFuncionario)
+        </dd>
+        <dt class = "col-sm-2">
+            Data de Admissão:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataAdmissao)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="FuncionarioId" />
+        <input type="submit" value="Remover" class="btn btn-outline-danger" /> |
+        <a asp-action="Index">Voltar para a lista</a>
+    </form>
+</div>

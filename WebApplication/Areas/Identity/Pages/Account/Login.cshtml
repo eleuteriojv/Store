@@ -1,0 +1,44 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Acesso/Login";
+}
+<div class="card mx-auto w-50">
+    <div class="card-header">
+        <div class="text-center">
+            <h4>Login</h4>
+        </div>            
+        <hr />
+        <form id="account" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="card-body">
+                <label asp-for="Input.Email">E-mail</label>
+                <input asp-for="Input.Email" class="form-control" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                <div>
+                    <label asp-for="Input.Password">Senha</label>
+                    <input asp-for="Input.Password" class="form-control" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="checkbox text-center">
+                    <label asp-for="Input.RememberMe">
+                        Lembrar-me
+                        <input asp-for="Input.RememberMe" />
+                    </label>
+                </div>
+            </div>
+            <div class="card-footer text-center">
+                <a  id="forgot-password" asp-page="./ForgotPassword">
+                    Esqueceu a senha?
+                </a>
+                <a  asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Registrar um novo usuário</a>
+                <button type="submit" class="btn btn-outline-success">Entrar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
