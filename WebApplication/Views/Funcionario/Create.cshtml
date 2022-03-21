@@ -7,38 +7,44 @@
     <h4>Admissão</h4>
 </div>
 <hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="mx-auto w-50">
+    <div class="mx-auto">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <div>
                 <label asp-for="NomeFuncionario" class="control-label">Nome Completo</label>
                 <input asp-for="NomeFuncionario" class="form-control" />
                 <span asp-validation-for="NomeFuncionario" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="CargoFuncionario" class="control-label"></label>
-                <select asp-for="CargoFuncionario" class="form-control">Escolha o cargo...</select>
+            <div>
+                <label asp-for="CargoFuncionario" class="control-label">Cargo</label>
+                <select asp-for="CargoFuncionario" class="form-control">
+                    <option selected disabled>Escolha um cargo...</option>
+                    <option>Gerente</option>
+                    <option>Supervisor</option>
+                    <option>Funcionário</option>
+                </select>
                 <span asp-validation-for="CargoFuncionario" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="SalarioFuncionario" class="control-label"></label>
+            <div>
+                <label asp-for="SalarioFuncionario" class="control-label">Salário</label>
                 <input asp-for="SalarioFuncionario" class="form-control" />
                 <span asp-validation-for="SalarioFuncionario" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="DataAdmissao" class="control-label"></label>
+            <div>
+                <label asp-for="DataAdmissao" class="control-label">Data Admissão</label>
                 <input asp-for="DataAdmissao" class="form-control" />
                 <span asp-validation-for="DataAdmissao" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <br />
+            <div class="text-center">
                 <input type="submit" value="Adicionar" class="btn btn-outline-success" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
+<div class="text-center">
     <a asp-action="Index">Voltar para a lista</a>
 </div>
 

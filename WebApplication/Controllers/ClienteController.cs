@@ -40,10 +40,6 @@ namespace WebApplication.Controllers
             {
                 return NotFound();
             }
-            if(cliente.User != User.Identity.Name)
-            {
-                return NotFound();
-            }
             return View(cliente);
         }
 
@@ -75,10 +71,6 @@ namespace WebApplication.Controllers
 
             var cliente = await _context.Cliente.FindAsync(id);
             if (cliente == null)
-            {
-                return NotFound();
-            }
-            if (cliente.User != User.Identity.Name)
             {
                 return NotFound();
             }
@@ -131,10 +123,7 @@ namespace WebApplication.Controllers
             {
                 return NotFound();
             }
-            if (cliente.User != User.Identity.Name)
-            {
-                return NotFound();
-            }
+ 
             return View(cliente);
         }
 

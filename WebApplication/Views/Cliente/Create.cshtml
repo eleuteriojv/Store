@@ -7,44 +7,45 @@
     <h1>Adicionar um Cliente</h1>
 </div>
 <hr />
-<div class="mx-auto">
-    <div class="col-md-4">
+<div class="mx-auto w-50">
+    <div class="mx-auto">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <div>
                 <label asp-for="NomeCompleto" class="control-label"></label>
                 <input asp-for="NomeCompleto" class="form-control" />
                 <span asp-validation-for="NomeCompleto" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div>
                 <label asp-for="DataNascimento" class="control-label"></label>
                 <input asp-for="DataNascimento" class="form-control" />
                 <span asp-validation-for="DataNascimento" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div>
                 <label asp-for="Cidade" class="control-label"></label>
                 <input asp-for="Cidade" class="form-control" />
                 <span asp-validation-for="Cidade" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div>
                 <label asp-for="Sexo" class="control-label"></label>
                 <input asp-for="Sexo" class="form-control" />
                 <span asp-validation-for="Sexo" class="text-danger"></span>
             </div>
-            <div class="form-group" hidden>
+            <div hidden>
                 <label asp-for="User" class="control-label"></label>
                 <input asp-for="User" class="form-control" />
                 <span asp-validation-for="User" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <br />
+            <div class="text-center">
+                <input type="submit" value="Adicionar" class="btn btn-outline-success" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="text-center">
+    <a asp-action="Index">Voltar para a lista</a>
 </div>
 
 @section Scripts {

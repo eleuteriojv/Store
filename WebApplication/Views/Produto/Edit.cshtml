@@ -7,39 +7,39 @@
     <h4>Editar</h4>
 </div>
 <hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="mx-auto w-50">
+    <div class="mx-auto">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ProdutoId" />
-            <div class="form-group">
+            <div>
                 <label asp-for="NomeProduto" class="control-label">Nome do Produto</label>
                 <input asp-for="NomeProduto" class="form-control" />
                 <span asp-validation-for="NomeProduto" class="text-danger"></span>
             </div>
-            <div class="form-group" hidden>
+            <div hidden>
                 <label asp-for="DataEntrada" class="control-label">Data de Entrada</label>
                 <input asp-for="DataEntrada" class="form-control" />
                 <span asp-validation-for="DataEntrada" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div>
                 <label asp-for="DataSaida" class="control-label">Data de Saída</label>
                 <input asp-for="DataSaida" class="form-control" />
                 <span asp-validation-for="DataSaida" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div>
                 <label asp-for="Preco" class="control-label">Preço</label>
                 <input asp-for="Preco" class="form-control" />
                 <span asp-validation-for="Preco" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div>
                 <input type="submit" value="Salvar" class="btn btn-outline-success" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
+<div class="text-center">
     <a asp-action="Index">Voltar para a lista</a>
 </div>
 
